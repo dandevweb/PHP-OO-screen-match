@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-class Movie extends Title
+class Series extends Title
 {
     public function __construct(
         string $name,
         int $releaseYear,
         Genre $genre,
-        public readonly int $duration
+        public readonly int $seasons,
+        public readonly int $episodesPerSeason,
+        public readonly int $minutesPerEpisode,
     ) {
         parent::__construct($name, $releaseYear, $genre);
     }
@@ -16,6 +18,6 @@ class Movie extends Title
     #[Override]
     public function durationInMinutes(): int
     {
-        return $this->duration;
+        return $this->seasons * $this->episodesPerSeason * $this->minutesPerEpisode;
     }
 }
