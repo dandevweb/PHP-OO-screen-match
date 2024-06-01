@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . '/src/Enum/Genre.php';
 require __DIR__ . '/src/Model/Movie.php';
 require __DIR__ . '/src/functions.php';
 
@@ -8,7 +9,7 @@ echo "Bem-vindo ao ScreenMatch\n";
 $movie = new Movie(
     'Top Gun - Maverick',
     2021,
-    'ação'
+    Genre::ACTION
 );
 
 $movie->rate(7.8);
@@ -28,7 +29,4 @@ echo $movie->releaseYear;
 echo "\n";
 
 echo $movie->name;
-echo "\n";
-
-echo $movie->genre;
 echo "\n";

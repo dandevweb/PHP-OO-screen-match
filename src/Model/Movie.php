@@ -7,7 +7,7 @@ class Movie
     public function __construct(
         public readonly string $name,
         public readonly int $releaseYear,
-        public readonly string $genre,
+        public readonly Genre $genre,
         private array $ratings = []
     ) {}
 
